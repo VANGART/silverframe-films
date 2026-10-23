@@ -18,7 +18,7 @@
 /* Feuille de service SilverFrame : voir SILVERFRAME/DESIGN.md */
 :root{
   --noir:#0b0b0c; --papier:#ebe8e2; --encre:#151413; --argent:#b9bcc3;
-  --gris-p:#77736c; --gris-n:#8f8b84; --filet-p:rgba(21,20,19,.16); --filet-n:rgba(235,232,226,.14); --rec:#d2402b;
+  --gris-p:#635f58; --gris-n:#8f8b84; --filet-p:rgba(21,20,19,.16); --filet-n:rgba(235,232,226,.14); --rec:#d2402b;
   --serif:'Instrument Serif',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,monospace; --sans:'IBM Plex Sans',-apple-system,sans-serif; --marque:'Aboreto',Georgia,serif;
   --g:clamp(16px,5vw,72px);
 }
@@ -83,6 +83,14 @@ img,video{display:block;max-width:100%}
 .autres button:hover{border-color:var(--papier)}
 
 /* texte */
+.perso{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);padding:clamp(44px,6vw,88px) var(--g);border-bottom:1px solid var(--filet-p);align-items:center}
+.perso[hidden]{display:none}
+.perso h2{font:400 clamp(30px,3.8vw,52px)/1.04 var(--serif)}
+.perso .idee{margin-top:18px;font-size:19px;max-width:46ch}
+.perso .lab{font:400 11.5px/1.9 var(--mono);color:var(--gris-p);text-transform:uppercase;letter-spacing:.06em}
+.perso video{width:100%;max-height:78svh;background:#000;border:1px solid var(--filet-p)}
+.perso.sans-video{grid-template-columns:1fr}
+@media(max-width:820px){.perso{grid-template-columns:1fr}}
 .texte{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(24px,5vw,80px);padding:clamp(56px,8vw,120px) var(--g);border-bottom:1px solid var(--filet-p)}
 .texte h2{font:400 clamp(32px,4vw,56px)/1.02 var(--serif)}
 .texte .corps p{font-size:18px;max-width:52ch}
@@ -139,9 +147,18 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;paddin
   </dl>
 </section>
 
+<section class="perso" id="perso" hidden>
+  <div>
+    <div class="lab" data-t="p_lab">Préparé pour vous</div>
+    <h2 id="persoTitre" data-t="p_titre">Ce que je ferais pour vous</h2>
+    <p class="idee" id="persoIdee"></p>
+  </div>
+  <div id="persoVideo"></div>
+</section>
+
 <section class="ecran">
   <div class="cadre" onclick="voirFilm()">
-    <video id="boucle" autoplay muted loop playsinline preload="auto" poster="media/boucle.jpg"><source src="media/boucle.mp4" type="video/mp4"></video>
+    <video id="boucle" autoplay muted loop playsinline preload="metadata" poster="media/boucle.jpg"><source src="media/boucle.mp4" type="video/mp4"></video>
     <div class="rec mono"><b></b><span id="tc">00:00:00:00</span></div>
     <button class="lancer" type="button"><i>▶</i><span data-t="lancer">Lancer le film, 1 minute</span></button>
   </div>
@@ -182,7 +199,7 @@ footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;paddin
   </div>
 </section>
 
-<footer class="mono"><span>SilverFrame Agency · 99 rue de la Part-Dieu, 69003 Lyon</span><span data-t="pied">Page préparée pour vous</span></footer>
+<footer class="mono"><span>SilverFrame Agency · 99 rue de la Part-Dieu, 69003 Lyon</span><span><span data-t="pied">Page préparée pour vous</span> · <a href="https://www.silverframeagency.com/mentions-legales/#prospection" target="_blank" rel="noopener" data-t="confid">Pourquoi cette page, vos données</a></span></footer>
 
 <div class="lecteur" id="lecteur" role="dialog" aria-modal="true">
   <div class="titre mono" id="lecteurTitre"></div>
@@ -215,11 +232,12 @@ const FILMS = {
 const PAR_TYPE = {
   pub:['keyena','vangart-macro','ca-fff'], event:['ink-factory','don-papa','ca-fff'], social:['ca-fff','ozur','don-papa'],
   corporate:['ca-candice','vjm','vangart-fab'], prod:['vangart-macro','keyena','sunborn'], label:['sunborn','ultimate','bears'],
-  marque:['keyena','ca-fff','vangart-macro'], defaut:['ca-fff','keyena','ca-candice']
+  marque:['keyena','ca-fff','vangart-macro'], exposant:['don-papa','ink-factory','ca-fff'], organisateur:['ink-factory','don-papa','ca-campagne'],
+  sport:['keyena','ozur','ca-fff'], vin:['vangart-macro','don-papa','ca-candice'], defaut:['ca-fff','keyena','ca-candice']
 };
 
 const T = {
-  en:{h1b:'three films for you.',intro:"I'm Yann, a director based in Lyon. I shoot, edit and grade films for brands and for the agencies behind them. Here is what comes closest to your work.",c_pour:'For',c_de:'From',c_date:'Date',c_lieu:'Base',lieu:'Lyon. Shoots anywhere in France and abroad',c_poste:'Roles',postes:'Direction, camera, edit, colour grade',c_films:'Running order',prog:'The SilverFrame reel (1 min), then 3 reels',lancer:'Play the reel, 1 minute',bande:'Crédit Agricole × FFF, Keyena, Ozur, Don Papa, The Ink Factory, VANGART, music videos',son:'Sound on',bob_titre:'Three reels picked for you',bob_sous:'Every film was shot, edited and graded by me.',t_titre:'How I work with agencies',t1:'You keep the client and the idea. I take care of production: scouting, shooting, editing, grading, and the cut-downs for social.',t2:'Alone with my kit for a short format, with a camera, sound and lighting crew for a brand film. I can also work under the agency’s name.',t_clients:'Brands that trusted me with a film:',q1:'“We have worked with SilverFrame for over a year. An incredible outfit and rare professionalism.”',q2:'“They made every single VANGART video. Always top quality.”',s_titre:'A shoot coming up?',s_p:'Just reply to my email, even with a rough brief. I will come back with an approach and an estimate.',ecrire:'Email Yann',pied:'Page prepared for you',voir:'Watch',autres:'More films:',pour:'For'},
+  en:{h1b:'three films for you.',intro:"I'm Yann, a director based in Lyon. I shoot, edit and grade films for brands and for the agencies behind them. Here is what comes closest to your work.",c_pour:'For',c_de:'From',c_date:'Date',c_lieu:'Base',lieu:'Lyon. Shoots anywhere in France and abroad',c_poste:'Roles',postes:'Direction, camera, edit, colour grade',c_films:'Running order',prog:'The SilverFrame reel (1 min), then 3 reels',lancer:'Play the reel, 1 minute',bande:'Crédit Agricole × FFF, Keyena, Ozur, Don Papa, The Ink Factory, VANGART, music videos',son:'Sound on',bob_titre:'Three reels picked for you',bob_sous:'Every film was shot, edited and graded by me.',t_titre:'How I work with agencies',t1:'You keep the client and the idea. I take care of production: scouting, shooting, editing, grading, and the cut-downs for social.',t2:'Alone with my kit for a short format, with a camera, sound and lighting crew for a brand film. I can also work under the agency’s name.',t_clients:'Brands that trusted me with a film:',q1:'“We have worked with SilverFrame for over a year. An incredible outfit and rare professionalism.”',q2:'“They made every single VANGART video. Always top quality.”',s_titre:'A shoot coming up?',s_p:'Just reply to my email, even with a rough brief. I will come back with an approach and an estimate.',ecrire:'Email Yann',pied:'Page prepared for you',confid:'Why this page, your data',p_lab:'Prepared for you',p_titre:'What I would do for you',m_titre:'How I work with a brand',m1:'One person from the idea to delivery: I write, shoot, edit and grade, then cut every format you need for social and events.',m2:'Alone with my kit for short formats, with a camera, sound and lighting crew for a brand film. Fixed-price packages for trade shows and seasons.',voir:'Watch',autres:'More films:',pour:'For'},
   fr:{voir:'Regarder',autres:'Autres films :',pour:'Pour'}
 };
 
@@ -229,8 +247,11 @@ let langue = q.get('l') ? (q.get('l').slice(0,2) === 'fr' ? 'fr' : 'en') : 'fr';
 let selection = (q.get('f') || '').split(',').filter(k => FILMS[k]);
 if (!selection.length) selection = PAR_TYPE[q.get('t')] || PAR_TYPE.defaut;
 let agence = (q.get('a') || '').slice(0, 80);
+let typeDest = (q.get('t') || '').slice(0, 20);
+let idee = '';
+const MARQUE = ['marque','exposant','organisateur','sport','vin'];
 let prenom = '';
-const FR = {};
+const FR = {fr_m_titre:'Comment je travaille avec une marque', fr_m1:"Une seule personne de l'idée à la livraison : j'écris, je tourne, je monte et j'étalonne, puis je décline tous les formats dont vous avez besoin pour les réseaux et les événements.", fr_m2:"Seul avec mon matériel pour un format court, avec une équipe image, son et lumière pour un film de marque. Des forfaits à prix fixe pour un salon ou une saison."};
 
 function rpc(type, detail) {
   if (!jeton) return Promise.resolve({});
@@ -257,6 +278,18 @@ function rendre() {
     document.getElementById('titreBobines').textContent = (langue === 'en' ? 'Three reels picked for ' : 'Trois bobines choisies pour ') + agence;
     document.getElementById('titreContact').textContent = langue === 'en' ? 'A shoot coming up at ' + agence + '?' : 'Un tournage en vue chez ' + agence + ' ?';
     document.title = 'SilverFrame · ' + agence;
+  }
+  if (MARQUE.includes(typeDest)) {
+    const en = langue === 'en';
+    document.querySelector('[data-t="t_titre"]').textContent = en ? T.en.m_titre : FR.fr_m_titre;
+    document.querySelector('[data-t="t1"]').textContent = en ? T.en.m1 : FR.fr_m1;
+    document.querySelector('[data-t="t2"]').textContent = en ? T.en.m2 : FR.fr_m2;
+  }
+  const bloc = document.getElementById('perso');
+  document.getElementById('persoIdee').textContent = idee;
+  if (agence && (idee || document.getElementById('persoVideo').children.length)) {
+    bloc.hidden = false;
+    document.getElementById('persoTitre').textContent = (langue === 'en' ? 'What I would do for ' : 'Ce que je ferais pour ') + agence;
   }
   const m = document.getElementById('ecrire');
   m.href = 'mailto:silverframeagency@gmail.com?subject=' + encodeURIComponent((langue === 'en' ? 'Shoot' : 'Tournage') + (agence ? ' · ' + agence : ''));
@@ -312,8 +345,21 @@ rpc('vue').then(d => {
   agence = d.agence; prenom = d.prenom || '';
   if (!q.get('l') && d.langue) langue = d.langue === 'fr' ? 'fr' : 'en';
   if (Array.isArray(d.films) && d.films.filter(k => FILMS[k]).length) selection = d.films.filter(k => FILMS[k]);
+  if (d.type && !q.get('t')) typeDest = d.type;
+  idee = d.idee || '';
   rendre();
 });
+if (/^[a-z0-9]{6,20}$/i.test(jeton)) {
+  fetch('media/perso/' + jeton + '.mp4', {method: 'HEAD'}).then(r => {
+    if (!r.ok) return;
+    const v = document.createElement('video');
+    v.src = 'media/perso/' + jeton + '.mp4'; v.poster = 'media/perso/' + jeton + '.jpg';
+    v.controls = true; v.playsInline = true; v.preload = 'none';
+    v.addEventListener('play', () => note('film', 'video-perso'), {once: true});
+    document.getElementById('persoVideo').appendChild(v);
+    rendre();
+  }).catch(() => {});
+}
 </script>
 </body>
 </html>
