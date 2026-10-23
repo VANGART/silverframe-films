@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>SilverFrame · Yann V., réalisateur à Lyon</title>
+<meta name="description" content="Trois films de Yann V. (SilverFrame, Lyon) choisis pour votre agence.">
+<meta property="og:title" content="SilverFrame · trois films pour votre agence">
+<meta property="og:description" content="Yann V., réalisateur à Lyon : tournage, montage, étalonnage.">
+<meta property="og:image" content="https://films.silverframeagency.com/media/og.jpg">
+<link rel="icon" href="media/icone.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* Feuille de service SilverFrame : voir SILVERFRAME/DESIGN.md */
+:root{
+  --noir:#0b0b0c; --papier:#ebe8e2; --encre:#151413; --argent:#b9bcc3;
+  --gris-p:#77736c; --gris-n:#8f8b84; --filet-p:rgba(21,20,19,.16); --filet-n:rgba(235,232,226,.14); --rec:#d2402b;
+  --serif:'Instrument Serif',Georgia,serif; --mono:'IBM Plex Mono',ui-monospace,monospace; --sans:'IBM Plex Sans',-apple-system,sans-serif; --marque:'Aboreto',Georgia,serif;
+  --g:clamp(16px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--papier);color:var(--encre);-webkit-text-size-adjust:100%}
+body{font:300 16.5px/1.6 var(--sans);overflow-x:hidden}
+a{color:inherit}
+img,video{display:block;max-width:100%}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.02em}
+
+/* en-tête */
+.tete{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px var(--g);border-bottom:1px solid var(--filet-p)}
+.marque{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marque img{height:30px;width:auto;filter:invert(1) brightness(.2)}
+.marque span{font-family:var(--marque);font-size:13px;letter-spacing:.36em}
+.tete .droite{display:flex;gap:18px;align-items:center}
+.langue{background:none;border:1px solid var(--filet-p);padding:4px 10px;font:500 11px var(--mono);cursor:pointer;color:var(--encre)}
+
+/* ouverture : la feuille */
+.feuille{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(28px,5vw,80px);padding:clamp(40px,7vw,96px) var(--g) clamp(36px,5vw,64px);align-items:end}
+.feuille h1{font:400 clamp(48px,8.4vw,128px)/.92 var(--serif);letter-spacing:-.015em}
+.feuille h1 .ag{display:block;word-break:break-word}
+.feuille h1 em{font-style:italic;color:var(--gris-p)}
+.feuille .intro{margin-top:28px;max-width:44ch;font-size:17.5px}
+.champs{border-top:1px solid var(--encre)}
+.champs div{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:11px 0;border-bottom:1px solid var(--filet-p);font-size:15px}
+.champs dt{font:400 11.5px/1.9 var(--mono);color:var(--gris-p);text-transform:uppercase;letter-spacing:.06em}
+.champs dd{font-weight:400}
+.champs .pt{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--rec);margin-right:8px;vertical-align:1px}
+@media(max-width:860px){.feuille{grid-template-columns:1fr}}
+
+/* le film */
+.ecran{background:var(--noir);color:var(--papier);padding:0 var(--g) clamp(40px,6vw,80px)}
+.ecran .cadre{position:relative;aspect-ratio:16/9;max-height:78svh;width:100%;overflow:hidden;cursor:pointer;background:#000}
+.ecran video{width:100%;height:100%;object-fit:cover}
+.ecran .bande{display:flex;justify-content:space-between;gap:16px;padding:14px 0;color:var(--gris-n);flex-wrap:wrap}
+.ecran .lancer{position:absolute;left:clamp(16px,3vw,36px);bottom:clamp(16px,3vw,32px);display:flex;align-items:center;gap:14px;background:none;border:0;color:#fff;cursor:pointer;font:400 clamp(22px,2.6vw,34px) var(--serif)}
+.ecran .lancer i{width:54px;height:54px;border:1px solid rgba(255,255,255,.7);border-radius:50%;display:grid;place-items:center;font:12px var(--mono);font-style:normal}
+.ecran .cadre:hover .lancer i{background:#fff;color:#000}
+.ecran .rec{position:absolute;top:16px;left:16px;display:flex;gap:10px;align-items:center;color:#fff}
+.ecran .rec b{width:8px;height:8px;border-radius:50%;background:var(--rec)}
+
+/* bobines */
+.bobines{background:var(--noir);color:var(--papier);padding:clamp(48px,7vw,110px) var(--g)}
+.bobines h2{font:400 clamp(34px,4.6vw,64px)/1 var(--serif);max-width:20ch}
+.bobines .sous{color:var(--gris-n);margin-top:14px;max-width:52ch}
+.bobine{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(20px,4vw,60px);padding:clamp(28px,4vw,56px) 0;border-bottom:1px solid var(--filet-n);align-items:center;cursor:pointer}
+.bobine:first-of-type{margin-top:clamp(28px,4vw,56px);border-top:1px solid var(--filet-n)}
+.bobine .img{position:relative;overflow:hidden;background:#000;aspect-ratio:16/9}
+.bobine.v .img{aspect-ratio:4/5;max-height:70svh;width:min(100%,520px)}
+.bobine img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.bobine:hover img{transform:scale(1.03)}
+.bobine .img span{position:absolute;right:12px;bottom:10px;font:500 11.5px var(--mono);color:#fff;background:rgba(0,0,0,.55);padding:3px 7px}
+.bobine .num{font:500 12px var(--mono);color:var(--rec)}
+.bobine h3{font:400 clamp(30px,3.4vw,48px)/1.02 var(--serif);margin:10px 0 12px}
+.bobine p{color:#cfcbc4;max-width:40ch}
+.bobine .gen{margin-top:18px;color:var(--gris-n)}
+.bobine .voir{margin-top:22px;display:inline-flex;gap:10px;align-items:center;font:500 12px var(--mono);border-bottom:1px solid var(--papier);padding-bottom:3px;color:var(--papier)}
+@media(max-width:860px){.bobine{grid-template-columns:1fr}.bobine.v .img{width:72%}}
+.autres{margin-top:34px;color:var(--gris-n);line-height:2}
+.autres button{background:none;border:0;color:var(--papier);font:400 15px var(--sans);cursor:pointer;border-bottom:1px solid var(--filet-n);margin-right:14px;padding:0}
+.autres button:hover{border-color:var(--papier)}
+
+/* texte */
+.texte{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(24px,5vw,80px);padding:clamp(56px,8vw,120px) var(--g);border-bottom:1px solid var(--filet-p)}
+.texte h2{font:400 clamp(32px,4vw,56px)/1.02 var(--serif)}
+.texte .corps p{font-size:18px;max-width:52ch}
+.texte .corps p+p{margin-top:16px}
+.clients{margin-top:34px;font:400 clamp(20px,2vw,26px)/1.45 var(--serif);color:var(--gris-p)}
+.clients b{font-weight:400;color:var(--encre)}
+@media(max-width:860px){.texte{grid-template-columns:1fr}}
+
+.paroles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,4vw,64px);padding:clamp(48px,7vw,100px) var(--g);border-bottom:1px solid var(--filet-p)}
+.paroles blockquote{font:400 clamp(22px,2.3vw,30px)/1.3 var(--serif)}
+.paroles cite{display:block;margin-top:16px;font:400 12px var(--mono);font-style:normal;color:var(--gris-p);text-transform:uppercase;letter-spacing:.05em}
+@media(max-width:860px){.paroles{grid-template-columns:1fr}}
+
+.signe{display:grid;grid-template-columns:auto 1fr;gap:clamp(20px,4vw,48px);align-items:center;padding:clamp(56px,8vw,120px) var(--g)}
+.signe img{width:clamp(120px,16vw,200px);aspect-ratio:4/5;object-fit:cover;filter:grayscale(.3)}
+.signe h2{font:400 clamp(32px,4.4vw,60px)/1.02 var(--serif);max-width:18ch}
+.signe p{margin-top:14px;max-width:50ch;font-size:17px}
+.signe .liens{margin-top:24px;display:flex;gap:22px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;background:var(--encre);color:var(--papier);text-decoration:none;font:500 13px var(--mono);padding:13px 18px}
+.btn:hover{background:var(--rec)}
+.signe .liens a.tel{font:400 13px var(--mono);text-decoration:none;border-bottom:1px solid var(--encre)}
+@media(max-width:600px){.signe{grid-template-columns:1fr}}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:20px var(--g) 30px;border-top:1px solid var(--filet-p);color:var(--gris-p)}
+
+/* lecteur */
+.lecteur{position:fixed;inset:0;z-index:50;background:rgba(5,5,6,.96);display:none;align-items:center;justify-content:center;padding:64px 16px 20px}
+.lecteur.ouvert{display:flex}
+.lecteur .cadre{width:min(1280px,100%);max-height:calc(100svh - 100px);aspect-ratio:16/9;position:relative;background:#000}
+.lecteur .cadre.vertical{aspect-ratio:9/16;width:auto;height:calc(100svh - 100px)}
+.lecteur iframe,.lecteur video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lecteur .fermer{position:absolute;top:14px;right:14px;width:44px;height:44px;border:1px solid rgba(255,255,255,.3);background:none;color:#fff;font-size:20px;cursor:pointer;border-radius:50%}
+.lecteur .titre{position:absolute;top:26px;left:18px;right:80px;color:#cfcbc4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+</style>
+</head>
+<body>
+
+<header class="tete">
+  <a class="marque" href="https://www.silverframeagency.com" target="_blank" rel="noopener"><img src="media/logo-silverframe-blanc.png" alt=""><span>SILVERFRAME</span></a>
+  <div class="droite"><span class="mono" id="numero"></span><button class="langue" id="langue" type="button">EN</button></div>
+</header>
+
+<section class="feuille">
+  <div>
+    <h1><span class="ag" id="agence">Votre agence,</span><em data-t="h1b">trois films pour vous.</em></h1>
+    <p class="intro" data-t="intro">Je suis Yann, réalisateur à Lyon. Je tourne, je monte et j'étalonne des films pour des marques et pour les agences qui les accompagnent. Voici ce qui se rapproche le plus de votre travail.</p>
+  </div>
+  <dl class="champs">
+    <div><dt data-t="c_pour">Pour</dt><dd id="cPour">—</dd></div>
+    <div><dt data-t="c_de">De</dt><dd>Yann V., SilverFrame Agency</dd></div>
+    <div><dt data-t="c_date">Date</dt><dd id="cDate"></dd></div>
+    <div><dt data-t="c_lieu">Base</dt><dd data-t="lieu">Lyon. Tournages partout en France et à l'étranger</dd></div>
+    <div><dt data-t="c_poste">Postes</dt><dd data-t="postes">Réalisation, cadre, montage, étalonnage</dd></div>
+    <div><dt data-t="c_films">Au programme</dt><dd><span class="pt"></span><span data-t="prog">Le film SilverFrame (1 min), puis 3 bobines</span></dd></div>
+  </dl>
+</section>
+
+<section class="ecran">
+  <div class="cadre" onclick="voirFilm()">
+    <video id="boucle" autoplay muted loop playsinline preload="auto" poster="media/boucle.jpg"><source src="media/boucle.mp4" type="video/mp4"></video>
+    <div class="rec mono"><b></b><span id="tc">00:00:00:00</span></div>
+    <button class="lancer" type="button"><i>▶</i><span data-t="lancer">Lancer le film, 1 minute</span></button>
+  </div>
+  <div class="bande mono"><span data-t="bande">Crédit Agricole × FFF, Keyena, Ozur, Don Papa, The Ink Factory, VANGART, clips</span><span data-t="son">Avec le son</span></div>
+</section>
+
+<section class="bobines">
+  <h2 id="titreBobines" data-t="bob_titre">Trois bobines choisies pour vous</h2>
+  <p class="sous" data-t="bob_sous">Chaque film a été tourné, monté et étalonné par moi.</p>
+  <div id="liste"></div>
+  <div class="autres" id="autres"></div>
+</section>
+
+<section class="texte">
+  <h2 data-t="t_titre">Comment je travaille avec une agence</h2>
+  <div class="corps">
+    <p data-t="t1">Vous gardez le client et l'idée. Je prends la production : repérage, tournage, montage, étalonnage, et les déclinaisons pour les réseaux.</p>
+    <p data-t="t2">Seul avec mon matériel pour un format court, avec une équipe image, son et lumière pour un film de marque. Je peux aussi intervenir sous le nom de l'agence.</p>
+    <p class="clients"><span data-t="t_clients">Ils m'ont confié des films :</span> <b>Crédit Agricole, Fédération française de football, Deutsche Welle, Wella, Don Papa Rum, M. Chapoutier, Aluna Festival, The Ink Factory, Kosmos, Monfairepart, VANGART.</b></p>
+  </div>
+</section>
+
+<section class="paroles">
+  <blockquote><span data-t="q1">« Nous travaillons avec SilverFrame depuis plus d'un an. Une structure incroyable et un professionnalisme rarissime. »</span><cite>M&amp;R Digital Agency</cite></blockquote>
+  <blockquote><span data-t="q2">« Ils ont signé la totalité des vidéos de VANGART. Toujours hyper quali. »</span><cite>Benjamin Beau, VANGART</cite></blockquote>
+</section>
+
+<section class="signe" id="contact">
+  <img src="media/yann.jpg" alt="Yann V." loading="lazy">
+  <div>
+    <h2 id="titreContact" data-t="s_titre">Un tournage en vue ?</h2>
+    <p data-t="s_p">Répondez simplement à mon mail, même avec un brief incomplet. Je reviens vers vous avec une approche et une estimation.</p>
+    <div class="liens">
+      <a class="btn" id="ecrire" href="mailto:silverframeagency@gmail.com" onclick="note('contact','mail')" data-t="ecrire">Écrire à Yann</a>
+      <a class="tel" href="tel:+33677521036" onclick="note('contact','tel')">06 77 52 10 36</a>
+      <a class="tel" href="https://www.silverframeagency.com" target="_blank" rel="noopener">silverframeagency.com</a>
+    </div>
+  </div>
+</section>
+
+<footer class="mono"><span>SilverFrame Agency · 99 rue de la Part-Dieu, 69003 Lyon</span><span data-t="pied">Page préparée pour vous</span></footer>
+
+<div class="lecteur" id="lecteur" role="dialog" aria-modal="true">
+  <div class="titre mono" id="lecteurTitre"></div>
+  <button class="fermer" type="button" onclick="fermer()" aria-label="Fermer">×</button>
+  <div class="cadre" id="cadre"></div>
+</div>
+
+<script>
+const SUPA = 'https://qhiolpewbhwuufxtbjew.supabase.co';
+const ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFoaW9scGV3Ymh3dXVmeHRiamV3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODcxMzExNjgsImV4cCI6MjEwMjcwNzE2OH0.B0Po6BYk4i3lD9wRHz5Xh0wC7FhsaXEb4P0WYVZ8c00';
+
+// Films de Yann (Vimeo). v = vertical. gen = ce que Yann a fait.
+const FILMS = {
+  'ca-fff':      {vimeo:'1217039625', client:'Crédit Agricole × Lorem × FFF', titre:{fr:"Un match de l'équipe de France, vu par l'artiste Lorem", en:"A France national team match, seen through the artist Lorem"}, gen:{fr:'Réalisation, tournage, montage', en:'Direction, shoot, edit'}, duree:'1:06', v:true},
+  'ca-candice':  {vimeo:'1059358866', client:'Crédit Agricole', titre:{fr:'Portrait de Candice Chlovy, agricultrice en Auvergne-Rhône-Alpes', en:'Portrait of Candice Chlovy, a farmer in the French Alps region'}, gen:{fr:'Réalisation, tournage, étalonnage', en:'Direction, shoot, grade'}, duree:'3:33'},
+  'ca-campagne': {vimeo:'1059359955', client:'Crédit Agricole', titre:{fr:'Campagne régionale « Agissons au cœur de nos territoires »', en:'Regional campaign for Crédit Agricole'}, gen:{fr:'Réalisation, montage, étalonnage', en:'Direction, edit, grade'}, duree:'3:29'},
+  'keyena':      {vimeo:'1059359077', client:'Keyena × Artik', titre:{fr:'Des pointes peintes à la main, une sprinteuse, un stade de nuit', en:'Hand-painted spikes, a sprinter, a stadium at night'}, gen:{fr:'Réalisation, tournage, étalonnage', en:'Direction, shoot, grade'}, duree:'0:33'},
+  'don-papa':    {vimeo:'1168529161', client:'Don Papa Rum', titre:{fr:'Winterlandia, un bar éphémère en station de ski', en:'Winterlandia, a pop-up bar in a ski resort'}, gen:{fr:'Captation, montage vertical', en:'Coverage, vertical edit'}, duree:'0:45', v:true},
+  'ink-factory': {vimeo:'1188031932', client:'The Ink Factory', titre:{fr:'Aftermovie de la convention internationale de tatouage de Lyon', en:'Aftermovie of the Lyon international tattoo convention'}, gen:{fr:'Captation, montage, étalonnage', en:'Coverage, edit, grade'}, duree:'2:34'},
+  'ozur':        {vimeo:'1188034228', client:'Ozur', titre:{fr:'La collection de maillots, portée par une nageuse olympique', en:'The swimwear collection, worn by an Olympic swimmer'}, gen:{fr:'Tournage, montage vertical', en:'Shoot, vertical edit'}, duree:'0:49', v:true},
+  'vjm':         {vimeo:'1176655479', client:'VJM', titre:{fr:'Le sertissage, filmé en macro', en:'Stone setting, shot in macro'}, gen:{fr:'Tournage macro, étalonnage', en:'Macro shoot, grade'}, duree:'0:24'},
+  'monfairepart':{vimeo:'890836795',  client:'Monfairepart', titre:{fr:"Dans l'atelier de fabrication", en:'Inside the production workshop'}, gen:{fr:'Tournage, montage', en:'Shoot, edit'}, duree:'0:34'},
+  'vangart-fab': {vimeo:'691045247',  client:'VANGART', titre:{fr:'La fabrication des toiles brodées', en:'How the embroidered artworks are made'}, gen:{fr:'Réalisation, tournage, étalonnage', en:'Direction, shoot, grade'}, duree:'1:29'},
+  'vangart-macro':{vimeo:'794421371', client:'VANGART', titre:{fr:'Le fil, de très près', en:'Thread, up close'}, gen:{fr:'Réalisation, effets, étalonnage', en:'Direction, VFX, grade'}, duree:'0:50'},
+  'telethon':    {vimeo:'1039204100', client:'LOREM × VANGART', titre:{fr:'Une œuvre pour le Téléthon 2024', en:'An artwork for the 2024 Téléthon'}, gen:{fr:'Tournage, montage vertical', en:'Shoot, vertical edit'}, duree:'0:30', v:true},
+  'sunborn':     {vimeo:'1156001897', client:'Sunborn', titre:{fr:'« Glacier », clip', en:'“Glacier”, music video'}, gen:{fr:'Réalisation, montage, étalonnage', en:'Direction, edit, grade'}, duree:'4:58'},
+  'ultimate':    {vimeo:'1039051701', client:'Adrien Gonzales ft. EIGA', titre:{fr:'« Ultimate », clip', en:'“Ultimate”, music video'}, gen:{fr:'Réalisation, montage, étalonnage', en:'Direction, edit, grade'}, duree:'3:21'},
+  'bears':       {vimeo:'751282874',  client:"Bear's Towers", titre:{fr:'« Hometown », clip', en:'“Hometown”, music video'}, gen:{fr:'Réalisation, montage, étalonnage', en:'Direction, edit, grade'}, duree:'3:02'},
+};
+const PAR_TYPE = {
+  pub:['keyena','vangart-macro','ca-fff'], event:['ink-factory','don-papa','ca-fff'], social:['ca-fff','ozur','don-papa'],
+  corporate:['ca-candice','vjm','vangart-fab'], prod:['vangart-macro','keyena','sunborn'], label:['sunborn','ultimate','bears'],
+  marque:['keyena','ca-fff','vangart-macro'], defaut:['ca-fff','keyena','ca-candice']
+};
+
+const T = {
+  en:{h1b:'three films for you.',intro:"I'm Yann, a director based in Lyon. I shoot, edit and grade films for brands and for the agencies behind them. Here is what comes closest to your work.",c_pour:'For',c_de:'From',c_date:'Date',c_lieu:'Base',lieu:'Lyon. Shoots anywhere in France and abroad',c_poste:'Roles',postes:'Direction, camera, edit, colour grade',c_films:'Running order',prog:'The SilverFrame reel (1 min), then 3 reels',lancer:'Play the reel, 1 minute',bande:'Crédit Agricole × FFF, Keyena, Ozur, Don Papa, The Ink Factory, VANGART, music videos',son:'Sound on',bob_titre:'Three reels picked for you',bob_sous:'Every film was shot, edited and graded by me.',t_titre:'How I work with agencies',t1:'You keep the client and the idea. I take care of production: scouting, shooting, editing, grading, and the cut-downs for social.',t2:'Alone with my kit for a short format, with a camera, sound and lighting crew for a brand film. I can also work under the agency’s name.',t_clients:'Brands that trusted me with a film:',q1:'“We have worked with SilverFrame for over a year. An incredible outfit and rare professionalism.”',q2:'“They made every single VANGART video. Always top quality.”',s_titre:'A shoot coming up?',s_p:'Just reply to my email, even with a rough brief. I will come back with an approach and an estimate.',ecrire:'Email Yann',pied:'Page prepared for you',voir:'Watch',autres:'More films:',pour:'For'},
+  fr:{voir:'Regarder',autres:'Autres films :',pour:'Pour'}
+};
+
+const q = new URLSearchParams(location.search);
+const jeton = (q.get('c') || '').slice(0, 20);
+let langue = q.get('l') ? (q.get('l').slice(0,2) === 'fr' ? 'fr' : 'en') : 'fr';
+let selection = (q.get('f') || '').split(',').filter(k => FILMS[k]);
+if (!selection.length) selection = PAR_TYPE[q.get('t')] || PAR_TYPE.defaut;
+let agence = (q.get('a') || '').slice(0, 80);
+let prenom = '';
+const FR = {};
+
+function rpc(type, detail) {
+  if (!jeton) return Promise.resolve({});
+  return fetch(SUPA + '/rest/v1/rpc/sfa_presentation', {method:'POST', headers:{apikey:ANON, Authorization:'Bearer ' + ANON, 'Content-Type':'application/json'},
+    body: JSON.stringify({p_jeton: jeton, p_type: type, p_detail: detail || null})}).then(r => r.ok ? r.json() : {}).catch(() => ({}));
+}
+function note(type, detail) { rpc(type, detail); }
+function esc(s) { return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+function rendre() {
+  document.documentElement.lang = langue;
+  document.querySelectorAll('[data-t]').forEach(e => {
+    const k = e.dataset.t;
+    if (!(k in FR)) FR[k] = e.innerHTML;
+    e.innerHTML = langue === 'en' && T.en[k] ? T.en[k] : FR[k];
+  });
+  document.getElementById('langue').textContent = langue === 'en' ? 'FR' : 'EN';
+  const nom = agence || (langue === 'en' ? 'Your agency' : 'Votre agence');
+  document.getElementById('agence').textContent = nom + ',';
+  document.getElementById('cPour').textContent = agence ? (prenom ? prenom + ', ' : '') + agence : '—';
+  document.getElementById('cDate').textContent = new Date().toLocaleDateString(langue === 'en' ? 'en-GB' : 'fr-FR', {day:'numeric', month:'long', year:'numeric'});
+  document.getElementById('numero').textContent = (langue === 'en' ? 'Call sheet' : 'Feuille de service') + (jeton ? ' · ' + jeton.toUpperCase() : '');
+  if (agence) {
+    document.getElementById('titreBobines').textContent = (langue === 'en' ? 'Three reels picked for ' : 'Trois bobines choisies pour ') + agence;
+    document.getElementById('titreContact').textContent = langue === 'en' ? 'A shoot coming up at ' + agence + '?' : 'Un tournage en vue chez ' + agence + ' ?';
+    document.title = 'SilverFrame · ' + agence;
+  }
+  const m = document.getElementById('ecrire');
+  m.href = 'mailto:silverframeagency@gmail.com?subject=' + encodeURIComponent((langue === 'en' ? 'Shoot' : 'Tournage') + (agence ? ' · ' + agence : ''));
+  const s = selection.slice(0, 3);
+  document.getElementById('liste').innerHTML = s.map((k, i) => {
+    const f = FILMS[k];
+    return `<article class="bobine${f.v ? ' v' : ''}" onclick="lire('${k}')" tabindex="0" onkeydown="if(event.key==='Enter')lire('${k}')">
+      <div class="img"><img src="media/films/${k}.jpg?v=2" alt="${esc(f.client)}" loading="lazy"><span>${f.duree}</span></div>
+      <div><div class="num">${langue === 'en' ? 'REEL' : 'BOBINE'} ${i + 1}/3</div><h3>${esc(f.client)}</h3><p>${esc(f.titre[langue])}</p>
+      <div class="gen mono">${esc(f.gen[langue])} : Yann V.</div><span class="voir">▶ ${T[langue].voir}</span></div></article>`;
+  }).join('');
+  const reste = Object.keys(FILMS).filter(k => !s.includes(k));
+  document.getElementById('autres').innerHTML = `<span class="mono">${T[langue].autres}</span> ` + reste.map(k => `<button type="button" onclick="lire('${k}')">${esc(FILMS[k].client)}</button>`).join('');
+}
+
+function ouvrir(html, titre, vertical) {
+  const c = document.getElementById('cadre');
+  c.className = 'cadre' + (vertical ? ' vertical' : '');
+  c.innerHTML = html;
+  document.getElementById('lecteurTitre').textContent = titre;
+  document.getElementById('lecteur').classList.add('ouvert');
+  document.body.style.overflow = 'hidden';
+}
+function lire(k) {
+  const f = FILMS[k];
+  ouvrir(`<iframe src="https://player.vimeo.com/video/${f.vimeo}?autoplay=1&title=0&byline=0&portrait=0&dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`, f.client + ' · ' + f.titre[langue], f.v);
+  note('film', k);
+}
+function voirFilm() {
+  ouvrir(`<video src="media/silverframe-film${langue === 'en' ? '-en' : ''}.mp4" poster="media/boucle.jpg" controls autoplay playsinline></video>`, 'SilverFrame · 1:00', false);
+  note('film', 'film-silverframe');
+}
+function fermer() {
+  document.getElementById('lecteur').classList.remove('ouvert');
+  document.getElementById('cadre').innerHTML = '';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') fermer(); });
+document.getElementById('lecteur').addEventListener('click', e => { if (e.target.id === 'lecteur') fermer(); });
+document.getElementById('langue').onclick = () => { langue = langue === 'en' ? 'fr' : 'en'; rendre(); };
+
+const boucle = document.getElementById('boucle'), tcEl = document.getElementById('tc');
+const lancer = () => boucle.play().catch(() => {});
+lancer(); boucle.addEventListener('canplay', lancer, {once: true});
+document.addEventListener('visibilitychange', () => { if (!document.hidden) lancer(); });
+(function tc() { const s = boucle.currentTime || 0, t = Math.floor(s);
+  tcEl.textContent = [Math.floor(t / 3600), Math.floor(t / 60) % 60, t % 60, Math.floor((s % 1) * 24)].map(n => String(n).padStart(2, '0')).join(':');
+  requestAnimationFrame(tc); })();
+
+rendre();
+rpc('vue').then(d => {
+  if (!d || !d.agence) return;
+  agence = d.agence; prenom = d.prenom || '';
+  if (!q.get('l') && d.langue) langue = d.langue === 'fr' ? 'fr' : 'en';
+  if (Array.isArray(d.films) && d.films.filter(k => FILMS[k]).length) selection = d.films.filter(k => FILMS[k]);
+  rendre();
+});
+</script>
+</body>
+</html>
